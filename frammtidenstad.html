@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Öppnar headern -->
+<head>
+    <meta charset="utf-8">
+<!-- Ger en tillgång tilla att bestämma hemsidans dimensioner och skala --> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- hämtar css ifrån en annan fil-->
+    <link rel="stylesheet" href="style.css">
+<!-- hämtar en länk som gör så vi använda knappar/iconer -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<!-- lägger in en icon/logo for hemsidans titel -->
+    <link rel="icon" href="./images/titlelogo.png" type="image/icon type">
+<!-- sänger headern -->  
+</head>
+
+<!-- öppnar body -->   
+<body>
+<!-- Skapar en sid/navbar --> 
+<div style="background-image: url('images/unnamed.jpeg');"></div>
+<input type="checkbox" id="check">
+<label for="check">
+    <i class="fas fa-bars" id="btn"></i>
+    <i class="fas fa-times" id="cancel"></i>
+</label>
+    <div class="sidebar">
+    <header>Bläddra här</header>
+<ul>
+<!-- Menyvalen i Navbaren -->  
+  <li><a href="frammtidenstad.html"><i class="fas fa-stream"></i>Översikt</a></li>
+  <li><a href="om.html"><i class="far fa-question-circle"></i>Om</a></li>
+  <li><a href="bilder.html"><i class="fas fa-images"></i>Bilder</a></li>
+</ul>
+</div>
+<!-- Skapr ett mellanrum imellan toppen av skärmen och rubriken -->
+  <br>
+<!-- lägger in en titel i en container som är placerad center av skärmen -->
+<div class="main-container2">
+  <div class="header-container flex-align-center flex-content-center"> <span class="title2">Framtidens Gåsebäck</span>
+</div>
+<!-- Skapar ett mellanrum imellan titeln och divboxarna -->
+  <br>
+  <br>
+  <br>
+<!-- Öppnar en box och lägger in en bild i den --> 
+<div class="flex-container">
+  <div class="column"><img src="./images/hus.jpeg" alt="Lights" style="width:100%">
+</div>
+<!-- Öppnar en box och lägger in text i den -->
+<div class="text-box">
+<div class="Rubrik"><h1>Rubrik</h1></div>
+    <br>
+    2050 så kommer det inte finnas bostad till alla i samhället om det fortsätter att se ut som det gör nu. Därför är vårat projekt att utveckla städerna anpassat
+    så alla ska få plats i vårat samhälle.
+    <br>
+    <br>
+    Stadsplaneringen är skapad så man ska få allt inom näringslivet. Därför har vi lagt fokus på Naturen och Naturkänsla i 
+    centrala staden efter som det kommer antagligen inte finnas någon plats för dom stora parkerna och skogarna.
+    <br> 
+    <br>
+    Vi fokuserar på Gåsebäcks industri område som kan utveckla till bostadsområden för alla i samhället 
+    och inte planerat utifrån någon speciell grupp som familj, 
+    ensamstående, fattig och rik. Detta ska passa alla!
+</div>
+<!-- Öppnar en flex footer med en länk till tis helsingborgs hemsida -->
+<div class="flex-align-center flex-content-center footer">
+  <a href="https://innovationsgymnasiet.se/har-finns-vi/helsingborg/" style="color:white" target="_blank">Tis Helsingborg </a>
+</div>
+<!-- stänger bodyn -->
+</body>
+</html>

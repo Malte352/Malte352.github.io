@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Öppnar headern -->
+<head>
+    <meta charset="utf-8">
+    <!-- Ger en tillgång tilla att bestämma hemsidans dimensioner och skala --> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- hämtar css ifrån en annan fil-->
+    <link rel="stylesheet" href="style.css">
+    <!-- hämtar bilderna ifrån en annan fil -->
+    <link rel="stylesheet" href="bilder.css">
+    <!-- hämtar en länk som gör så vi använda knappar/iconer -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <!-- lägger in en icon/logo for hemsidans titel -->
+    <link rel="icon" href="./images/titlelogo.png" type="image/icon type">
+<!-- sänger headern -->
+</head>
+
+<!-- öppnar body -->
+<body>
+  <!-- Skapar en sid/navbar -->   
+  <input type="checkbox" id="check">
+  <label for="check">
+      <i class="fas fa-bars" id="btn"></i>
+      <i class="fas fa-times" id="cancel"></i>
+  </label>
+      <div class="sidebar">
+      <header>Bläddra här</header>
+  <ul>
+     <!-- Menyvalen i Navbaren -->
+    <li><a href="frammtidenstad.html"><i class="fas fa-stream"></i>Översikt</a></li>
+    <li><a href="om.html"><i class="far fa-question-circle"></i>Om</a></li>
+    <li><a href="#"><i class="fas fa-images"></i>Bilder</a></li>
+    <li><a href="#"><i class="far fa-envelope"></i>Kontakt</a></li>
+  </ul>
+  </div>
+  <br>
+
+
+<!-- lägger in en titel i en container som är placerad center av skärmen -->
+<div class="main-container2">
+  <div class="flex-content-center"> <span class="title2">Bildgalleri</span>
+</div>
+
+<!-- skapar ett brake som ett mellanrum imellan bilderna och titeln -->
+<br>
+
+<!-- diven öppnar bilden och visar den samt lägger in en funktion när man klickar på bilden -->
+<div class="row">
+  <div class="column">
+    <img src="./images/ahus_vinga.png" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="./images/hus.jpeg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="./images/huss3.jpeg"style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="./images/Tyresö_Baksida_1920x1920.jpeg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+</div>
+
+<!-- Lägger in bliderna i bildgalleriet som öppnas av funktionen -->
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 4</div>
+      <img src="./images/ahus_vinga.png" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 4</div>
+      <img src="./images/hus.jpeg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 4</div>
+      <img src="./images/huss3.jpeg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">4 / 4</div>
+      <img src="./images/Tyresö_Baksida_1920x1920.jpeg" style="width:100%">
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+<!-- visar vad som händer när man är inne på bild galleriet -->
+    <div class="column">
+      <img class="demo cursor" src="./images/ahus_vinga.png" style="width:100%" onclick="currentSlide(1)" alt="Hus1">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="./images/hus.jpeg" style="width:100%" onclick="currentSlide(2)" alt="Hus2">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="./images/huss3.jpeg" style="width:100%" onclick="currentSlide(3)" alt="Hus3">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="./images/Tyresö_Baksida_1920x1920.jpeg" style="width:100%" onclick="currentSlide(4)" alt="Hus4">
+    </div>
+  </div>
+</div>
+
+<!-- Öppnar en flex footer med en länk till tis helsingborgs hemsida --> 
+<div class="flex-align-center flex-content-center footer">
+  <a href="https://innovationsgymnasiet.se/har-finns-vi/helsingborg/" style="color:white" target="_blank">Tis Helsingborg </a>
+</div>
+
+
+<!-- öppnar skript -->
+<!-- Funktionen för klick funktionen på bilden -->
+<script>
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script> <!-- stänger script -->
+<!-- stänger body -->
+</body>
+</html>
